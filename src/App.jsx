@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { saveAcceptanceTest } from './api'
+import fcLogo from './FClogo.png'
 import './App.css'
 
 const NUMERIC_HEADER_FIELDS = new Set([
@@ -213,7 +214,7 @@ export default function App() {
   return (
     <div className="page">
       <header className="page-header">
-        <p className="eyebrow">Grundfos</p>
+        <img className="page-logo" src={fcLogo} alt="Peerless FireConnect" />
         <h1>Acceptance Test Form</h1>
         <p className="subtitle">
           Enter site, pump, driver, controller, jockey pump, and test reading details.
