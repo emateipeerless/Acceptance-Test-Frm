@@ -11,7 +11,6 @@ const NUMERIC_HEADER_FIELDS = new Set([
   'driverRatedRpm',
   'startPsi',
   'jockeyPumpVoltage',
-  'jockeyPumpAmps',
   'jockeyPumpHp',
 ])
 
@@ -71,10 +70,8 @@ const SECTIONS = [
     title: 'Jockey Pump Information',
     fields: [
       { name: 'jockeyPumpManufacturer', label: 'Jockey Pump Manufacturer', type: 'text' },
-      { name: 'jockeyPumpType', label: 'Jockey Pump Type', type: 'text' },
       { name: 'jockeyPumpSize', label: 'Jockey Pump Size', type: 'text' },
       { name: 'jockeyPumpVoltage', label: 'Jockey Pump Voltage', type: 'number' },
-      { name: 'jockeyPumpAmps', label: 'Jockey Pump Amps', type: 'number' },
       { name: 'jockeyPumpHp', label: 'Jockey Pump HP', type: 'number' },
     ],
   },
