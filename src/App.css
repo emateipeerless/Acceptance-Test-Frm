@@ -70,6 +70,13 @@
   color: #33485e;
 }
 
+.required-mark {
+  margin-left: 3px;
+  color: #e2000f;
+  text-decoration: none;
+  font-weight: 700;
+}
+
 .field input {
   width: 100%;
   min-height: 42px;

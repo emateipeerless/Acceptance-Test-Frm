@@ -18,7 +18,7 @@ const SECTIONS = [
   {
     title: 'Site Information',
     fields: [
-      { name: 'storeNumber', label: 'Store #', type: 'text', required: true },
+      { name: 'storeNumber', label: 'Store #', type: 'text' },
       { name: 'city', label: 'City', type: 'text' },
       { name: 'state', label: 'State', type: 'text' },
     ],
@@ -214,7 +214,8 @@ export default function App() {
         <img className="page-logo" src={fcLogo} alt="Peerless FireConnect" />
         <h1>Home Depot Acceptance Test Form</h1>
         <p className="subtitle">
-          Enter site, pump, driver, controller, jockey pump, and test reading details.
+          Enter site, pump, driver, controller, jockey pump, and test reading details. All
+          fields are required.
         </p>
       </header>
 
@@ -225,14 +226,19 @@ export default function App() {
             <div className={`field-grid ${section.fields.length === 1 ? 'single' : ''}`}>
               {section.fields.map((field) => (
                 <label key={field.name} className="field">
-                  <span>{field.label}</span>
+                  <span>
+                    {field.label}
+                    <abbr className="required-mark" title="Required">
+                      *
+                    </abbr>
+                  </span>
                   <input
                     name={field.name}
                     type={field.type}
                     value={formValues[field.name]}
                     onChange={handleChange}
                     autoComplete="off"
-                    required={Boolean(field.required)}
+                    required
                     disabled={saving}
                   />
                 </label>
@@ -258,7 +264,12 @@ export default function App() {
               <tbody>
                 {TEST_METRICS.map((metric) => (
                   <tr key={metric.key}>
-                    <th scope="row">{metric.label}</th>
+                    <th scope="row">
+                      {metric.label}
+                      <abbr className="required-mark" title="Required">
+                        *
+                      </abbr>
+                    </th>
                     {TEST_POINTS.map((point) => (
                       <td key={point.key}>
                         {isFixedReading(metric.key, point.key) ? (
@@ -274,6 +285,7 @@ export default function App() {
                               handleTestReadingChange(metric.key, point.key, event.target.value)
                             }
                             autoComplete="off"
+                            required
                             disabled={saving}
                           />
                         )}
