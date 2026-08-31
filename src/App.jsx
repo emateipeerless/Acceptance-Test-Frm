@@ -212,7 +212,7 @@ export default function App() {
     <div className="page">
       <header className="page-header">
         <img className="page-logo" src={fcLogo} alt="Peerless FireConnect" />
-        <h1>Acceptance Test Form</h1>
+        <h1>Home Depot Acceptance Test Form</h1>
         <p className="subtitle">
           Enter site, pump, driver, controller, jockey pump, and test reading details.
         </p>
